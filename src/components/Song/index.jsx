@@ -63,9 +63,11 @@ const Song = ({ song, playlist, handleRemoveSong }) => {
 					)}
 				</IconButton>
 				<img src={song.img} alt="song_img" />
-				<Link to={`/song/${currentSong?.song?._id}/${artist?.data?._id}`}>
-					<p>{song?.name}</p>
-				</Link>
+				<p>
+					<Link to={`/song/${currentSong?.song?._id}/${artist?.data?._id}`}>
+						{song?.name}
+					</Link>
+				</p>
 			</div>
 			<div className={styles.center}>
 				<p>{artist?.data?.name}</p>

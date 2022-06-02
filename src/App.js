@@ -18,6 +18,7 @@ import Search from "./pages/Search";
 import LikedSongs from "./pages/LikedSongs";
 import Profile from "./pages/Profile";
 import Song from "./pages/Song";
+import Artist from "./pages/Artist";
 
 const App = () => {
 	const dispatch = useDispatch();
@@ -82,6 +83,12 @@ const App = () => {
 					user={user}
 					path="/song/:id/:id"
 					component={Song}
+				/>
+				<PrivateRoute
+					exact
+					user={user}
+					path="/artist/:id"
+					component={Artist}
 				/>
 				<PrivateRoute exact user={user} path="/me" component={Profile} />
 				{user && <Redirect from="/signup" to="/home" />}
